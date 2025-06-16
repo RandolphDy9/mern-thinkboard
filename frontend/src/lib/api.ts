@@ -1,6 +1,6 @@
 import axios, { type AxiosError } from "axios"
 
-const API_BASE_URL = "http://localhost:5001/api"
+const API_BASE_URL = import.meta.env.MODE === "development" ? "http://localhost:5001/api" : "/api";
 
 // Create axios instance with default config
 const apiClient = axios.create({
